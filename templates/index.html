@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALTCHA Demo</title>
+  <script async defer src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.min.js" type="module"
+    onerror="console.error('Failed to load ALTCHA widget from CDN')"></script>
+
+  <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+</head>
+
+<body>
+  <h1>ALTCHA Demo</h1>
+  <form id="protected-form">
+    <altcha-widget id="altcha-widget" challengeurl="/api/challenge" auto="onload" overlay workers="4">
+    </altcha-widget>
+
+    <!-- Main Action Button -->
+    <button type="button" id="access-btn" class="btn btn-primary btn-lg" disabled>
+        <span id="btn-text">
+          <i class="me-2"></i>
+          Access Protected Content
+        </span>
+        <span id="btn-spinner" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"
+          style="display: none;"></span>
+    </button>
+  </form>
+
+  <!-- Custom JavaScript -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
